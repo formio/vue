@@ -1,0 +1,53 @@
+{
+  "name": "vue-formio",
+  "version": "1.0.0",
+  "description": "A vue.js renderer for form.io forms.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src --ignore=*.spec.js --out-dir ./lib --presets es2015,react,stage-2",
+    "lint": "eslint src",
+    "watch": "babel ./src --watch --ignore=*.spec.js --out-dir ./lib --presets es2015,react,stage-2",
+    "prepublish": "npm run lint; npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formio/vue-formio.git"
+  },
+  "keywords": [
+    "Form.io",
+    "vue.js",
+    "forms"
+  ],
+  "author": "Randall Knutson <randall@form.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/formio/vue-formio/issues"
+  },
+  "homepage": "https://github.com/formio/vue-formio#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "formiojs": "^2.8.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.0.5",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.13.0",
+    "babel-register": "^6.4.3",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-config-formio": "^1.1.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "webpack": "^2.6.1"
+  },
+  "files": [
+    "lib"
+  ]
+}
