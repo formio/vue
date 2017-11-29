@@ -11,7 +11,7 @@ npm-compatible packaging system such as [Browserify](http://browserify.org/) or
 [webpack](http://webpack.github.io/).
 
 ```
-npm install react-formio --save
+npm install vue-formio --save
 ```
 
 ## Props
