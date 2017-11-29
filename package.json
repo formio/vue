@@ -27,7 +27,7 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "formiojs": "^2.8.5"
+    "formiojs": "^2.24.3"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
