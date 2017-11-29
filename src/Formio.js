@@ -1,5 +1,6 @@
+/* globals console, Promise */
 import Vue from 'vue';
-import {Formio as FormioFull} from 'formiojs/full';
+import { Formio as FormioFull } from 'formiojs/full';
 
 const Formio = {
   name: 'formio',
@@ -25,7 +26,9 @@ const Formio = {
         this.setupForm();
       })
       .catch((err) => {
+        /* eslint-disable no-console */
         console.warn(err);
+        /* eslint-enable no-console */
       });
   },
 
@@ -45,7 +48,9 @@ const Formio = {
               return formio;
             }))
             .catch(err => {
+              /* eslint-disable no-console */
               console.error(err);
+              /* eslint-enable no-console */
             });
         }
         else if (this.form) {
@@ -64,11 +69,11 @@ const Formio = {
 
     setupForm() {
       if (this.submission) {
-        this.formio.submission = this.submission
+        this.formio.submission = this.submission;
       }
 
       if (this.url) {
-        this.formio.url = this.url
+        this.formio.url = this.url;
       }
 
       this.formio.events.onAny((...args) => {
@@ -117,7 +122,7 @@ const Formio = {
   },
 
   render(createElement) {
-    return createElement('div', {ref: 'formio'});
+    return createElement('div', { ref: 'formio' });
   }
 };
 
