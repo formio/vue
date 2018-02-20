@@ -1,5 +1,5 @@
 .bower.json
 *.log
 node_modules
-bower_components
 lib
+.idea
