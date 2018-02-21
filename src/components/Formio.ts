@@ -1,11 +1,11 @@
 /* globals console, Promise */
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import { FormioLib, createForm } from 'formiojs';
+import { default as FormioLib, createForm } from 'formiojs';
 
 @Component
 export default class Formio extends Vue {
-  formio?: Formiojs
+  formio?: FormioLib
 
   @Prop()
   src?: string
@@ -72,7 +72,7 @@ export default class Formio extends Vue {
     return new Promise((resolve, reject) => {
       if (this.src) {
         resolve(createForm(this.$refs.formio, this.src, this.options)
-          .then((formio: Formiojs): Formiojs => {
+          .then((formio: FormioLib): FormioLib => {
             this.formio = formio;
             return formio;
           })
@@ -84,7 +84,7 @@ export default class Formio extends Vue {
       }
       else if (this.form) {
         resolve(createForm(this.$refs.formio, this.form, this.options)
-          .then((formio: Formiojs): Formiojs => {
+          .then((formio: FormioLib): FormioLib => {
             this.formio = formio;
             return formio;
           })

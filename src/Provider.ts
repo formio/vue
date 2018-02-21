@@ -1,5 +1,5 @@
-import VueRouter from 'vue-router';
 import { Store } from 'vuex';
+import { expose } from 'vue-expose-inject';
 
 export type ProviderTypes = 'auth' | 'builder' | 'forms' | 'offline' | 'resource' | 'other';
 
@@ -9,19 +9,19 @@ export interface ProviderInterface {
   form?: string;
   type?: ProviderTypes;
   titlePlural?: string;
-}
-
-export function registerProviders(providers: Provider[], router?: VueRouter, store?: Store<any>) {
-  providers.forEach((provider) => {
-    provider.name = 'test';
-  });
+  routes?: any[]
+  store?: any,
+  children?: Provider[],
+  views?: any
 }
 
 export class Provider implements ProviderInterface {
   settings: ProviderInterface;
+  parent?: Provider;
 
-  public constructor(settings: ProviderInterface) {
+  public constructor(settings: ProviderInterface, parent?: Provider) {
     this.settings = settings;
+    this.parent = parent;
   }
 
   protected capitalize(value: string): string {
@@ -64,11 +64,57 @@ export class Provider implements ProviderInterface {
     this.settings.form = value;
   }
 
-  public get type(): ProviderTypes {
-    return this.type || 'resource';
+  // public get type(): ProviderTypes {
+  //   return this.type || 'resource';
+  // }
+  //
+  // public set type(value: ProviderTypes) {
+  //   this.settings.type = value;
+  // }
+  //
+  public get children(): Provider[] {
+    return this.settings.children || [];
   }
 
-  public set type(value: ProviderTypes) {
-    this.settings.type = value;
+  public get rootPath(): string {
+    return (this.parent ? this.parent.path : '') + '/' + this.name;
+  }
+
+  public get path(): string {
+    return this.rootPath + '/:id';
+  }
+
+  public init(Vue: any) {
+    this.children.forEach(child => {
+      child.init(Vue);
+    });
+  }
+
+  public registerRoutes(router: any) {
+    router.addRoutes([
+      {
+        path: this.rootPath,
+        component: {
+          mixins: [expose],
+          expose: () => ({
+            $provider: this
+          }),
+          render(createElement: any) {
+            return createElement('router-view')
+          }
+        },
+        children: this.settings.routes
+      }
+    ]);
+
+    this.children.forEach(child => {
+      child.registerRoutes(router);
+    });
+  }
+
+  public registerStore(store: any) {
+    this.children.forEach(child => {
+      child.registerStore(store);
+    });
   }
 }

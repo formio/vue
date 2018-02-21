@@ -27,9 +27,10 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "dependencies": {
     "@types/node": "^4.0.36",
-    "formiojs": "^2.29.0",
+    "formiojs": "^2.29.5",
     "vue": "^2.5.13",
     "vue-class-component": "^6.1.2",
+    "vue-expose-inject": "^0.3.1",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

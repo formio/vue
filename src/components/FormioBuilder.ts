@@ -1,7 +1,7 @@
 /* globals console, Promise */
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import { FormioLib, createForm } from 'formiojs';
+import { default as FormioLib, createForm } from 'formiojs';
 /*
  * This is a duplicate of Formio Renderer for now. Once the formio.js builder is complete this will be update to mimic it.
  */
@@ -75,7 +75,7 @@ export default class FormioBuilder extends Vue {
     return new Promise((resolve, reject) => {
       if (this.src) {
         resolve(createForm(this.$refs.formio, this.src, this.options)
-          .then((formio: Formiojs): Formiojs => {
+          .then((formio: FormioLib): FormioLib => {
             this.formio = formio;
             return formio;
           })
@@ -87,7 +87,7 @@ export default class FormioBuilder extends Vue {
       }
       else if (this.form) {
         resolve(createForm(this.$refs.formio, this.form, this.options)
-          .then((formio: Formiojs): Formiojs => {
+          .then((formio: FormioLib): FormioLib => {
             this.formio = formio;
             return formio;
           })
