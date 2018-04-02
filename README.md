@@ -14,6 +14,27 @@ npm-compatible packaging system such as [Browserify](http://browserify.org/) or
 npm install vue-formio --save
 ```
 
+## Basic Usage
+
+HTML inside of Vue template file:
+```
+<template>
+  <div id="app">
+    <formio src="" url="" form="" submission="" options="" v-on:submit=""></formio>
+  </div>
+</template>
+```
+
+Javascript inside of Vue template file.
+```
+<script>
+  import { Formio as formio } from 'vue-formio';
+  export default {
+      name: 'app',
+      components: { Formio },
+  }
+</script>
+```
 ## Props
 
 ### `src` : `string`

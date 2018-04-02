@@ -7,8 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "watch": "tsc -w",
-    "prepublish": "rm -rf lib/; tsc --sourceMap false"
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -27,7 +26,7 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "dependencies": {
     "@types/node": "^4.0.36",
-    "formiojs": "^2.29.5",
+    "formiojs": "^2.30.1",
     "vue": "^2.5.13",
     "vue-class-component": "^6.1.2",
     "vue-expose-inject": "^0.3.1",
