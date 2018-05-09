@@ -1,4 +1,4 @@
-import Formio from './components/Formio';
+import Form from './components/Form';
 import { Provider } from './Provider';
 import formiojs from 'formiojs';
 import Vue from 'vue';
@@ -7,9 +7,9 @@ import Vue from 'vue';
 export class Plugin {
   // Vue Plugin
   static install (Vue: Vue, { providers, store, router }: { providers: Provider[], store: any, router: any }) {
-    Vue.$formio = formiojs;
+    // Vue.$formio = formiojs;
 
-    Vue.component('Formio', Formio);
+    // Vue.component('Form', Form);
 
     providers.forEach(provider => {
       provider.init(Vue);

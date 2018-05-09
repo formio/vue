@@ -28,10 +28,10 @@ HTML inside of Vue template file:
 Javascript inside of Vue template file.
 ```
 <script>
-  import { Formio as formio } from 'vue-formio';
+  import { Form } from 'vue-formio';
   export default {
       name: 'app',
-      components: { Formio },
+      components: { formio: Form },
   }
 </script>
 ```
@@ -72,5 +72,26 @@ All events triggered from the form are available via the v-on property. See [For
 
 Then on the form set `<formio src="myform" v-on:submit="doSomething" />`
 
+## FormBuilder
+
+HTML inside of Vue template file:
+```
+<template>
+  <div id="app">
+    <formbuilder v-bind:form="{display: 'form'}" v-bind:options="{}" v-on:change="(schema) => console.log(schema)"></formio>
+  </div>
+</template>
+```
+
+Javascript inside of Vue template file.
+```
+<script>
+  import { FormBuilder } from 'vue-formio';
+  export default {
+      name: 'app',
+      components: { FormBuilder },
+  }
+</script>
+```
 ## License
 Released under the [MIT License](http://www.opensource.org/licenses/MIT).
