@@ -1,6 +1,9 @@
 /* globals console, Promise */
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator'
+import AllComponents from 'formiojs/components';
+import Components from 'formiojs/components/Components';
+Components.setComponents(AllComponents);
 import Form from 'formiojs/Form';
 import Formio from 'formiojs/Formio';
 
