@@ -24,12 +24,12 @@ export default class extends Vue {
   @Watch('form')
   formChange(value: object) {
     if (this.builder) {
-      this.builder.form = value;
+      this.builder.instance.form = value;
     }
   }
 
   mounted() {
-    this.initializeForm()
+    this.initializeBuilder()
       .catch((err) => {
         /* eslint-disable no-console */
         console.warn(err);
@@ -39,11 +39,11 @@ export default class extends Vue {
 
   destroyed() {
     if (this.builder) {
-      this.builder.destroy(true);
+      this.builder.instance.destroy(true);
     }
   }
 
-  initializeForm(): Promise<any> {
+  initializeBuilder(): Promise<any> {
     if (this.form) {
       this.builder = new FormBuilder(this.$refs.formio, this.form, this.options);
       this.builderReady = this.builder.setDisplay(this.form.display);
