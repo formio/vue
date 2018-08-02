@@ -1,6 +1,6 @@
 {
   "name": "vue-formio",
-  "version": "1.0.1",
+  "version": "3.0.0",
   "description": "A vue.js renderer for form.io forms.",
   "main": "lib/index",
   "typeings": "lib/index",
