@@ -1,6 +1,6 @@
 /* globals console, Promise */
 import Vue from 'vue';
-import { Component, Prop, Watch } from 'vue-property-decorator'
+import { Component, Prop, Watch } from 'vue-property-decorator';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
 Components.setComponents(AllComponents);
@@ -9,22 +9,25 @@ import Formio from 'formiojs/Formio';
 
 @Component
 export default class extends Vue {
-  formio?: Formio
+  formio?: Formio;
 
   @Prop()
-  src?: string
+  src?: string;
 
   @Prop()
-  url?: string
+  url?: string;
 
   @Prop()
-  form?: object
+  form?: object;
 
   @Prop()
-  submission?: object
+  submission?: object;
+
+  @Prop()
+  language?: string;
 
   @Prop({ default: () => {} })
-  options?: object
+  options?: object;
 
   @Watch('src')
   srcChange(value: string) {
@@ -54,6 +57,13 @@ export default class extends Vue {
     }
   }
 
+  @Watch('language')
+  languageChange(value: string) {
+    if (this.formio) {
+      this.formio.language = value;
+    }
+  }
+
   mounted() {
     this.initializeForm()
       .then(() => {
@@ -75,30 +85,38 @@ export default class extends Vue {
   initializeForm(): Promise<any> {
     return new Promise((resolve, reject) => {
       if (this.src) {
-        resolve((new Form(this.$refs.formio, this.src, this.options)).render()
-          .then((formio: Formio): Formio => {
-            this.formio = formio;
-            return formio;
-          })
-          .catch((err: Error) => {
-            /* eslint-disable no-console */
-            console.error(err);
-            /* eslint-enable no-console */
-          }));
-      }
-      else if (this.form) {
-        resolve((new Form(this.$refs.formio, this.form, this.options)).render()
-          .then((formio: Formio): Formio => {
-            this.formio = formio;
-            return formio;
-          })
-          .catch((err: Error) => {
-            /* eslint-disable no-console */
-            console.error(err);
-            /* eslint-enable no-console */
-          }));
-      }
-      else {
+        resolve(
+          new Form(this.$refs.formio, this.src, this.options)
+            .render()
+            .then(
+              (formio: Formio): Formio => {
+                this.formio = formio;
+                return formio;
+              },
+            )
+            .catch((err: Error) => {
+              /* eslint-disable no-console */
+              console.error(err);
+              /* eslint-enable no-console */
+            }),
+        );
+      } else if (this.form) {
+        resolve(
+          new Form(this.$refs.formio, this.form, this.options)
+            .render()
+            .then(
+              (formio: Formio): Formio => {
+                this.formio = formio;
+                return formio;
+              },
+            )
+            .catch((err: Error) => {
+              /* eslint-disable no-console */
+              console.error(err);
+              /* eslint-enable no-console */
+            }),
+        );
+      } else {
         // If we get to here there is no src or form
         reject('Must set src or form attribute');
       }
@@ -116,6 +134,8 @@ export default class extends Vue {
     if (this.url) {
       this.formio.url = this.url;
     }
+
+    this.formio.language = this.language ? this.language : 'en'
 
     this.formio.events.onAny((...args: any[]) => {
       const eventParts = args[0].split('.');
@@ -141,4 +161,4 @@ export default class extends Vue {
   render(createElement: any) {
     return createElement('div', { ref: 'formio' });
   }
-};
+}
