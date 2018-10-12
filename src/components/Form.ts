@@ -149,11 +149,13 @@ export default class extends Vue {
       args[0] = eventParts[1];
 
       this.$emit.apply(this, args);
+      this.$root.$emit.apply(this.$root, args);
 
       // Emit custom events under their own name as well.
       if (eventParts[1] === 'customEvent') {
         args[0] = args[1].type;
         this.$emit.apply(this, args);
+        this.$root.$emit.apply(this.$root, args);
       }
     });
   }
