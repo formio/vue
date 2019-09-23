@@ -4,7 +4,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
 Components.setComponents(AllComponents);
-import Form from 'formiojs/Form';
+import FormioForm from 'formiojs/Form';
 import Formio from 'formiojs/Formio';
 
 @Component
@@ -19,6 +19,9 @@ export default class extends Vue {
 
   @Prop()
   form?: object;
+
+  @Prop()
+  formioform?: undefined;
 
   @Prop()
   submission?: object;
@@ -86,11 +89,12 @@ export default class extends Vue {
     return new Promise((resolve, reject) => {
       if (this.src) {
         resolve(
-          new Form(this.$refs.formio, this.src, this.options)
-            .render()
+          new (this.formioform || FormioForm)(this.$refs.formio, this.src, this.options)
+            .ready
             .then(
               (formio: Formio): Formio => {
                 this.formio = formio;
+                this.formio.src = this.src
                 return formio;
               },
             )
@@ -102,12 +106,18 @@ export default class extends Vue {
         );
       } else if (this.form) {
         resolve(
-          new Form(this.$refs.formio, this.form, this.options)
-            .render()
+          new (this.formioform || FormioForm)(this.$refs.formio, this.form, this.options)
+            .ready
             .then(
               (formio: Formio): Formio => {
                 this.formio = formio;
-                return formio;
+                this.formio.form = this.form
+
+                if (this.url) {
+                  this.formio.url = this.url;
+                }
+
+                return this.formio;
               },
             )
             .catch((err: Error) => {
