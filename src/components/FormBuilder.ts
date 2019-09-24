@@ -5,10 +5,6 @@ import FormBuilder from 'formiojs/FormBuilder';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
 Components.setComponents(AllComponents);
-import Formio from 'formiojs/Formio';
-/*
- * This is a duplicate of Formio Renderer for now. Once the formio.js builder is complete this will be update to mimic it.
- */
 
 @Component
 export default class extends Vue {

@@ -87,7 +87,7 @@ export default class extends Vue {
       if (this.src) {
         resolve(
           new Form(this.$refs.formio, this.src, this.options)
-            .render()
+            .ready
             .then(
               (formio: Formio): Formio => {
                 this.formio = formio;
@@ -103,7 +103,7 @@ export default class extends Vue {
       } else if (this.form) {
         resolve(
           new Form(this.$refs.formio, this.form, this.options)
-            .render()
+            .ready
             .then(
               (formio: Formio): Formio => {
                 this.formio = formio;
