@@ -1,2 +1,2 @@
-export { default as Form } from './Form';
-export { default as FormBuilder } from './FormBuilder';
+export { Form } from './Form';
+export { FormBuilder } from './FormBuilder';

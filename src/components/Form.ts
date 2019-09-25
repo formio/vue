@@ -4,12 +4,12 @@ import { Component, Prop, Watch } from 'vue-property-decorator';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
 Components.setComponents(AllComponents);
-import Form from 'formiojs/Form';
+import FormioForm from 'formiojs/Form';
 import Formio from 'formiojs/Formio';
 
 @Component
-export default class extends Vue {
-  formio?: Formio;
+export class Form extends Vue {
+  formio?: any;
 
   @Prop()
   src?: string;
@@ -70,9 +70,7 @@ export default class extends Vue {
         this.setupForm();
       })
       .catch((err) => {
-        /* eslint-disable no-console */
         console.warn(err);
-        /* eslint-enable no-console */
       });
   }
 
@@ -86,10 +84,10 @@ export default class extends Vue {
     return new Promise((resolve, reject) => {
       if (this.src) {
         resolve(
-          new Form(this.$refs.formio, this.src, this.options)
+          new FormioForm(this.$refs.formio, this.src, this.options)
             .ready
             .then(
-              (formio: Formio): Formio => {
+              (formio: any): any => {
                 this.formio = formio;
                 return formio;
               },
@@ -102,10 +100,10 @@ export default class extends Vue {
         );
       } else if (this.form) {
         resolve(
-          new Form(this.$refs.formio, this.form, this.options)
+          new FormioForm(this.$refs.formio, this.form, this.options)
             .ready
             .then(
-              (formio: Formio): Formio => {
+              (formio: any): any => {
                 this.formio = formio;
                 return formio;
               },
@@ -135,7 +133,7 @@ export default class extends Vue {
       this.formio.url = this.url;
     }
 
-    this.formio.language = this.language ? this.language : 'en'
+    this.formio.language = this.language ? this.language : 'en';
 
     this.formio.events.onAny((...args: any[]) => {
       const eventParts = args[0].split('.');

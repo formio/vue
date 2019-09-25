@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "strictNullChecks": false,
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,

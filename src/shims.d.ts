@@ -5,4 +5,4 @@ declare module '*.vue' {
 
 declare module 'formiojs';
 
-declare module 'vue-expose-inject';
+declare module 'formiojs/Formio';

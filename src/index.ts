@@ -1,3 +1,10 @@
+import Vue from 'vue';
+import Formio from 'formiojs';
+import * as components from './components';
 export * from './components';
-export * from './Provider';
-export * from './Plugin';
+
+// Vue.$formio = Formio;
+
+Object.keys(components).forEach((name) => {
+  Vue.component(name, components[name]);
+});

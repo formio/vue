@@ -1,21 +1,21 @@
 /* globals console, Promise */
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import FormBuilder from 'formiojs/FormBuilder';
+import FormioFormBuilder from 'formiojs/FormBuilder';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
 Components.setComponents(AllComponents);
 
 @Component
-export default class extends Vue {
-  builder?: any
-  builderReady?: Promise<any>
+export class FormBuilder extends Vue {
+  builder?: any;
+  builderReady?: Promise<any>;
 
   @Prop()
-  form?: any
+  form?: any;
 
-  @Prop({ default: {} })
-  options?: object
+  @Prop()
+  options?: any;
 
   @Watch('form')
   formChange(value: object) {
@@ -41,7 +41,8 @@ export default class extends Vue {
 
   initializeBuilder(): Promise<any> {
     if (this.form) {
-      this.builder = new FormBuilder(this.$refs.formio, this.form, this.options);
+      // @ts-ignore
+      this.builder = new FormioFormBuilder(this.$refs.formio, this.form, this.options);
       this.builderReady = this.builder.setDisplay(this.form.display);
       return this.builderReady.then(() => {
         this.builder.instance.events.onAny((...args: any[]) => {
