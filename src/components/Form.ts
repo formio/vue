@@ -89,6 +89,7 @@ export class Form extends Vue {
             .then(
               (formio: any): any => {
                 this.formio = formio;
+                this.formio.src = this.src
                 return formio;
               },
             )
@@ -105,6 +106,12 @@ export class Form extends Vue {
             .then(
               (formio: any): any => {
                 this.formio = formio;
+                this.formio.form = this.form
+
+                if (this.url) {
+                  this.formio.url = this.url;
+                }
+
                 return formio;
               },
             )
