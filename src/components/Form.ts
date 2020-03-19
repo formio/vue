@@ -51,7 +51,7 @@ export class Form extends Vue {
   }
 
   @Watch('submission')
-  submissionhange(value: object) {
+  submissionChange(value: object) {
     if (this.formio) {
       this.formio.submission = value;
     }
