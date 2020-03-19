@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.1
+### Changed
+ - Upgrade Dependencies.
+ 
+### Fixed
+ - Builder should use Ready.
+ - Fix typo in event callback
+ - Set esModuleInterop in tsconfig.
+
 ## 4.0.0
 ### Changed
  - Upgrade formio.js to v4.1.1
