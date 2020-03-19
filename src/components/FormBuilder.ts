@@ -11,10 +11,10 @@ export class FormBuilder extends Vue {
   builder?: any;
   builderReady?: Promise<any>;
 
-  @Prop()
+  @Prop({ default: {} })
   form?: any;
 
-  @Prop()
+  @Prop({ default: {} })
   options?: any;
 
   @Watch('form')
@@ -40,37 +40,33 @@ export class FormBuilder extends Vue {
   }
 
   initializeBuilder(): Promise<any> {
-    if (this.form) {
-      // @ts-ignore
-      this.builder = new FormioFormBuilder(this.$refs.formio, this.form, this.options);
-      this.builderReady = this.builder.setDisplay(this.form.display);
-      return this.builderReady.then(() => {
-        this.builder.instance.events.onAny((...args: any[]) => {
-          const eventParts = args[0].split('.');
+    if (this.builder !== undefined) {
+      this.builder.instance.destroy(true);
+    }
+    // @ts-ignore
+    this.builder = new FormioFormBuilder(this.$refs.formio, this.form, this.options);
+    this.builderReady = this.builder.ready;
+    return this.builderReady.then(() => {
+      this.builder.instance.events.onAny((...args: any[]) => {
+        const eventParts = args[0].split('.');
 
-          // Only handle formio events.
-          if (eventParts[0] !== 'formio' || eventParts.length !== 2) {
-            return;
-          }
+        // Only handle formio events.
+        if (eventParts[0] !== 'formio' || eventParts.length !== 2) {
+          return;
+        }
 
-          // Remove formio. from event.
-          args[0] = eventParts[1];
+        // Remove formio. from event.
+        args[0] = eventParts[1];
 
+        this.$emit.apply(this, args);
+
+        // Emit a change event if the schema changes.
+        if (['saveComponent', 'updateComponent', 'deleteComponent'].includes(eventParts[1])) {
+          args[0] = 'change';
           this.$emit.apply(this, args);
-
-          // Emit a change event if the schema changes.
-          if (['saveComponent', 'updateComponent', 'deleteComponent'].includes(eventParts[1])) {
-            args[0] = 'change';
-            this.$emit.apply(this, args);
-          }
-        });
+        }
       });
-
-    }
-    else {
-      // If we get to here there is no src or form
-      return Promise.reject('Must set form attribute');
-    }
+    });
   }
 
   render(createElement: any) {
