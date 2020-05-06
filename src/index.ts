@@ -8,3 +8,5 @@ export * from './components';
 Object.keys(components).forEach((name) => {
   Vue.component(name, components[name]);
 });
+
+export {Components, Formio, Utils, Templates} from 'formiojs';

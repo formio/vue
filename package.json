@@ -26,7 +26,7 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "dependencies": {
     "@types/vue": "^2.0.0",
-    "formiojs": "^4.8.1",
+    "formiojs": "^4.9.26",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.2.2"
