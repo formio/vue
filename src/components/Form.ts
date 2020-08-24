@@ -26,8 +26,8 @@ export class Form extends Vue {
   @Prop()
   language?: string;
 
-  @Prop({ default: () => {} })
-  options?: object;
+  @Prop({ default: () => { } })
+  options?: any;
 
   @Watch('src')
   srcChange(value: string) {
@@ -146,7 +146,8 @@ export class Form extends Vue {
       const eventParts = args[0].split('.');
 
       // Only handle formio events.
-      if (eventParts[0] !== 'formio' || eventParts.length !== 2) {
+      const namespace: string = this.options.namespace || 'formio';
+      if (eventParts[0] !== namespace || eventParts.length !== 2) {
         return;
       }
 
