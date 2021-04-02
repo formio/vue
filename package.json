@@ -27,14 +27,13 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "dependencies": {
     "@types/vue": "^2.0.0",
-    "formiojs": "^4.11.2",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.2.2"
+    "@vue/compiler-sfc": "^3.0.7",
+    "formiojs": "^4.12.7",
+    "vue": "^3.0.9"
   },
   "devDependencies": {
-    "@types/node": "^4.9.3",
-    "typescript": "^2.9.2",
+    "@types/node": "^4.9.5",
+    "typescript": "^4.2.3",
     "typescript-eslint-parser": "^13.0.0"
   },
   "files": [
