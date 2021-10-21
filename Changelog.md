@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.8
+### Fixed
+ - FIO-3593 && FIO-3842: fixed some namespace errors
+
+### Changed
+ - Upgrade dependencies.
+
 ## 4.0.6
 ### Changed
  - Upgrade Dependencies.
