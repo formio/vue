@@ -146,7 +146,7 @@ export class Form extends Vue {
       const eventParts = args[0].split('.');
 
       // Only handle formio events.
-      const namespace: string = this.options.namespace || 'formio';
+      const namespace: string = this.options && this.options.namespace || 'formio';
       if (eventParts[0] !== namespace || eventParts.length !== 2) {
         return;
       }
