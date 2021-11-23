@@ -78,7 +78,7 @@ HTML inside of Vue template file:
 ```
 <template>
   <div id="app">
-    <formbuilder v-bind:form="{display: 'form'}" v-bind:options="{}" v-on:change="(schema) => console.log(schema)"></formio>
+    <formbuilder v-bind:form="{display: 'form'}" v-bind:options="{}" v-on:change="(schema) => console.log(schema)"></formbuilder>
   </div>
 </template>
 ```
