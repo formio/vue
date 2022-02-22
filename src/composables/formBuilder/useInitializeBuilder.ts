@@ -10,7 +10,7 @@ export default function useInitializeBuilder(props, context, options: Initialize
       const eventParts = args[0].split('.');
 
       // Only handle formio events.
-      const namespace: string = props.options.namespace || 'formio';
+      const namespace: string = props.options && props.options.namespace || 'formio';
       if (eventParts[0] !== namespace || eventParts.length !== 2) {
         return;
       }
