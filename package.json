@@ -1,6 +1,6 @@
 {
-  "name": "vue-formio",
-  "version": "4.0.8",
+  "name": "@formio/vue",
+  "version": "5.0.0-rc.1",
   "description": "A vue.js renderer for form.io forms.",
   "main": "lib/index",
   "typeings": "lib/index",
@@ -28,7 +28,7 @@
   "dependencies": {
     "@types/vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.0.7",
-    "formiojs": "^4.13.8",
+    "formiojs": "^4.14.2",
     "vue": "^3.0.9"
   },
   "devDependencies": {
