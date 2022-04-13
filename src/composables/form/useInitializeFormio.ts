@@ -84,6 +84,8 @@ export default function useInitializeForm(props, context, options: InitializeFor
     }
   });
 
+  context.expose({ formio: _formio })
+
   return {
     formio: _formio,
     initializeForm,

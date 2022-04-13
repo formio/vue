@@ -37,6 +37,8 @@ export default function useInitializeBuilder(props, context, options: Initialize
     return _builder.value.ready;
   };
 
+  context.expose({ builder: _builder })
+
   return {
     builder: _builder,
     initializeBuilder,
