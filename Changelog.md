@@ -4,9 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.0.0-rc.2]
+## 5.0.0-rc.2
 ### Fixed
  - Expose formio and builder from components
+ - Moved "dependencies" to "peerDependencies" and "devDependencies"
 
 ## 5.0.0-rc.1
 ### Changed
