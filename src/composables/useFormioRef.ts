@@ -1,4 +1,4 @@
-import { ref, Ref, onMounted, h } from 'vue';
+import { ref, Ref, h } from 'vue';
 
 export default function useFormioRef() {
   const formioRef = ref() as Ref<HTMLElement>;
