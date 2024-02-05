@@ -3,9 +3,9 @@
     "esModuleInterop": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,23 +13,10 @@
     "lib": ["es7", "dom"],
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
-    "outDir": "lib",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "outDir": "lib"
   },
   "parser": "typescript-eslint-parser",
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "test/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.vue", "test/**/*.ts"],
+  "exclude": ["node_modules"]
 }
