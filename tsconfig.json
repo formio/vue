@@ -17,6 +17,12 @@
     "outDir": "lib"
   },
   "parser": "typescript-eslint-parser",
-  "include": ["src/**/*.ts", "src/**/*.vue", "test/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
