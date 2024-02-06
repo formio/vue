@@ -2,8 +2,8 @@
   "name": "@formio/vue",
   "version": "5.0.0",
   "description": "A vue.js renderer for form.io forms.",
-  "main": "dist/formio-wrapper.umd.cjs",
-  "module": "dist/formio-wrapper.js",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "vite build",

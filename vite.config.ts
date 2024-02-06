@@ -11,8 +11,8 @@ export default ({ mode }) => {
       sourcemap: true,
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
-        name: 'formio-wrapper',
-        fileName: 'formio-wrapper',
+        name: 'formio-vue',
+        fileName: 'index',
       },
       rollupOptions: {
         external: ['vue'],
