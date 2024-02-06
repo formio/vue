@@ -3,7 +3,8 @@ import FormioFormBuilder from 'formiojs/FormBuilder';
 import InitializeFormBuilderOptions from '../../intefaces/formBuilder/initializeFormBuilderOptions';
 
 export default function useInitializeBuilder(props, context, options: InitializeFormBuilderOptions) {
-  const _builder = ref(null);
+  // TODO: This is a temporary fix for TS2339 on the line `_builder.instance.destroy(true)`.
+  const _builder: any = ref(null);
 
   const setupBuilder = () => {
     _builder.value.instance.events.onAny((...args: any[]) => {

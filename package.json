@@ -6,7 +6,7 @@
   "module": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && tsc",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.17.5",
+    "@types/vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.4.15",
     "formiojs": "^4.18.1",
     "typescript": "^5.3.3",

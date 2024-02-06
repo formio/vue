@@ -13,8 +13,11 @@
     "lib": ["es7", "dom"],
     "strict": true,
     "skipLibCheck": true,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
-    "outDir": "lib"
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
   },
   "parser": "typescript-eslint-parser",
   "include": [

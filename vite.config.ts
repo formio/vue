@@ -15,6 +15,11 @@ export default ({ mode }) => {
         fileName: 'index',
       },
       rollupOptions: {
+        output: {
+          globals: {
+            vue: 'Vue',
+          },
+        },
         external: ['vue'],
       },
     },
