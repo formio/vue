@@ -4,6 +4,7 @@
   "description": "A vue.js renderer for form.io forms.",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "vite build && tsc",
