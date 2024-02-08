@@ -1,12 +1,11 @@
-import { resolve } from 'path'
-import { defineConfig, loadEnv } from 'vite'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
+import tsConfigPaths from 'vite-tsconfig-paths';
 
-export default ({ mode }) => {
-  const env = loadEnv(mode, process.cwd())
-
+export default () => {
   return defineConfig({
-    plugins: [tsConfigPaths()],
+    plugins: [dts({ rollupTypes: true }), tsConfigPaths()],
     build: {
       sourcemap: true,
       lib: {
@@ -24,4 +23,4 @@ export default ({ mode }) => {
       },
     },
   })
-}
+};
