@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased: 5.0.1-rc.1]
+### Changed
+ - Fix issues with module output [662090d](https://github.com/formio/vue/commit/662090d25637847d4bdb062a7907def92a1b397d)
+   
 ## 5.0.0
 ## Changed
  - Official Release
