@@ -2,12 +2,12 @@
   "name": "@formio/vue",
   "version": "5.0.0",
   "description": "A vue.js renderer for form.io forms.",
-  "main": "lib/index",
-  "typeings": "lib/index",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "vite build && tsc",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -25,18 +25,21 @@
   },
   "homepage": "https://github.com/formio/vue-formio#readme",
   "peerDependencies": {
-    "formiojs": "^4.16.0",
-    "vue": "^3.0.9"
+    "formiojs": "^4.18.1",
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@types/node": "^18.17.5",
     "@types/vue": "^2.0.0",
-    "@vue/compiler-sfc": "^3.3.4",
-    "formiojs": "^4.16.0",
-    "typescript": "^4.9.5",
-    "typescript-eslint-parser": "^22.0.0"
+    "@vue/compiler-sfc": "^3.4.15",
+    "formiojs": "^4.18.1",
+    "typescript": "^5.3.3",
+    "typescript-eslint-parser": "^22.0.0",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "files": [
-    "lib"
+    "dist"
   ]
 }
