@@ -1,6 +1,6 @@
 # @formio/vue
 
-A [Vue.js](http://vue.js/) component for rendering out forms based on the [Form.io](https://www.form.io) platform.
+A [Vue.js](https://vuejs.org/) component for rendering out forms based on the [Form.io](https://www.form.io) platform.
 
 ## Install
 
@@ -41,7 +41,7 @@ Javascript inside of Vue template file.
 
 The form API source from [form.io](https://www.form.io) or your custom formio server.
 
-See the [Creating a form](http://help.form.io/userguide/#new-form)
+See the [Creating a form](https://help.form.io/userguide/forms/form-creation#creating-a-form)
 for where to set the API Path for your form.
 
 You can also pass in the submission url as the `src` and the form will render with the data populated from the submission.
@@ -64,11 +64,11 @@ An object representing the default data for the form.
 
 ### `options`: `object`
 
-An object with the formio.js options that is passed through. See [Form.io Options](https://github.com/formio/formio.js/wiki/Form-Renderer#options).
+An object with the formio.js options that is passed through. See [Form.io Options](https://help.form.io/developers/form-development/form-renderer#form-renderer-options).
 
 ## Events
 
-All events triggered from the form are available via the v-on property. See [Form.io Events](https://github.com/formio/formio.js/wiki/Form-Renderer#events) for all the available events.
+All events triggered from the form are available via the v-on property. See [Form.io Events](https://help.form.io/developers/form-development/form-renderer#form-events) for all the available events.
 
 Then on the form set `<formio src="myform" v-on:submit="doSomething" />`
 
