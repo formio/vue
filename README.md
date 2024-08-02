@@ -1,4 +1,4 @@
-# vue-formio
+# @formio/vue
 
 A [Vue.js](http://vue.js/) component for rendering out forms based on the [Form.io](https://www.form.io) platform.
 
@@ -11,7 +11,7 @@ npm-compatible packaging system such as [Browserify](http://browserify.org/) or
 [webpack](http://webpack.github.io/).
 
 ```
-npm install vue-formio --save
+npm install @formio/vue --save
 ```
 
 ## Basic Usage
@@ -28,7 +28,7 @@ HTML inside of Vue template file:
 Javascript inside of Vue template file.
 ```
 <script>
-  import { Form } from 'vue-formio';
+  import { Form } from '@formio/vue';
   export default {
       name: 'app',
       components: { formio: Form },
@@ -86,7 +86,7 @@ HTML inside of Vue template file:
 Javascript inside of Vue template file.
 ```
 <script>
-  import { FormBuilder } from 'vue-formio';
+  import { FormBuilder } from '@formio/vue';
   export default {
       name: 'app',
       components: { FormBuilder },
