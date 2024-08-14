@@ -1,4 +1,2 @@
-import Form from './Form';
-import FormBuilder from './FormBuilder';
-
-export { Form, FormBuilder };
+export * from './Form';
+export * from './FormBuilder';
