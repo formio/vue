@@ -4,6 +4,7 @@ declare module '*.vue' {
   export default Component;
 }
 
-declare module 'formiojs';
-
-declare module 'formiojs/Formio';
+declare module '@ungap/structured-clone' {
+  const structuredClone: any;
+  export default structuredClone;
+}

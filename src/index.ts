@@ -1,5 +1,4 @@
-import Formio from 'formiojs';
-import * as components from './components';
 export * from './components';
+export * from './types';
 
-export {Components, Formio, Utils, Templates} from 'formiojs';
+export {Components, Formio, Utils, Templates} from '@formio/js';
