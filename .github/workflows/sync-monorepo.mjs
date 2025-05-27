@@ -1,4 +1,4 @@
-import { syncfromGithubAction } from 'monorepo-sync';
+import { syncFromGithubAction } from 'monorepo-sync';
 
 syncFromGithubAction()
 	.then(() => {
