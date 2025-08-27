@@ -26,12 +26,12 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "peerDependencies": {
     "@formio/core": "2.2.0",
-    "@formio/js": "5.0.0-rc.69",
+    "@formio/js": "^5.0.0",
     "vue": "^3.4.15"
   },
   "devDependencies": {
     "@formio/core": "2.2.0",
-    "@formio/js": "5.0.0-rc.69",
+    "@formio/js": "^5.0.0",
     "@types/node": "^18.17.5",
     "@types/vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.4.15",
