@@ -8,7 +8,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "NODE_OPTIONS='--unhandled-rejections=warn' vitest run"
   },
   "repository": {
     "type": "git",
@@ -26,20 +27,24 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "peerDependencies": {
     "@formio/core": "2.2.0",
-    "@formio/js": "5.0.0-rc.69",
+    "@formio/js": "^5.0.0",
     "vue": "^3.4.15"
   },
   "devDependencies": {
     "@formio/core": "2.2.0",
-    "@formio/js": "5.0.0-rc.69",
+    "@formio/js": "^5.0.0",
     "@types/node": "^18.17.5",
     "@types/vue": "^2.0.0",
+    "@vitejs/plugin-vue": "^5.1.0",
     "@vue/compiler-sfc": "^3.4.15",
+    "@vue/test-utils": "^2.4.3",
+    "jsdom": "^24.0.0",
     "typescript": "^5.3.3",
     "typescript-eslint-parser": "^22.0.0",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.2",
-    "vite-tsconfig-paths": "^4.3.1"
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^1.6.0"
   },
   "files": [
     "dist"
