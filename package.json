@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc",
+    "dev": "vite build --watch",
     "prepublish": "npm run build"
   },
   "repository": {
