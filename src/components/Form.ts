@@ -1,6 +1,6 @@
 import { defineComponent, ref, onMounted, onBeforeUnmount, watch, CSSProperties, PropType, Prop, toRefs, toRaw } from 'vue';
 import { EventEmitter, Form as FormClass, Webform } from '@formio/js';
-import structuredClone from '@ungap/structured-clone';
+import { cloneDeep as structuredClone } from 'lodash';
 import { FormConstructor, FormHandlers, FormProps, FormSource } from '../types';
 import useFormioRef from '../composables/useFormioRef';
 
@@ -240,7 +240,6 @@ export const Form = defineComponent({
         props.formioform,
         props.onFormReady,
         props.formReady,
-        props.form,
         props.src,
         props.options,
         props.url,
@@ -251,6 +250,28 @@ export const Form = defineComponent({
         }
         createInstance();
       },
+    );
+
+    // Handle form schema updates intelligently
+    watch(
+      () => props.form,
+      (newForm, oldForm) => {
+        if (instanceIsReady.value && formInstance.value && newForm && oldForm) {
+          // Update the form schema without recreating the instance
+          formInstance.value.form = newForm;
+          // Trigger a rebuild to apply schema changes
+          formInstance.value.build(formioRef.value);
+        } else if (
+          instanceIsReady.value &&
+          formInstance.value &&
+          newForm &&
+          !oldForm
+        ) {
+          // Initial form load
+          formInstance.value.form = newForm;
+        }
+      },
+      { deep: true },
     );
 
     watch(
