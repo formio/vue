@@ -240,7 +240,6 @@ export const Form = defineComponent({
         props.formioform,
         props.onFormReady,
         props.formReady,
-        props.form,
         props.src,
         props.options,
         props.url,
@@ -251,6 +250,28 @@ export const Form = defineComponent({
         }
         createInstance();
       },
+    );
+
+    // Handle form schema updates intelligently
+    watch(
+      () => props.form,
+      (newForm, oldForm) => {
+        if (instanceIsReady.value && formInstance.value && newForm && oldForm) {
+          // Update the form schema without recreating the instance
+          formInstance.value.form = newForm;
+          // Trigger a rebuild to apply schema changes
+          formInstance.value.build();
+        } else if (
+          instanceIsReady.value &&
+          formInstance.value &&
+          newForm &&
+          !oldForm
+        ) {
+          // Initial form load
+          formInstance.value.form = newForm;
+        }
+      },
+      { deep: true },
     );
 
     watch(
