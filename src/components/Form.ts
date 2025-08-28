@@ -1,6 +1,6 @@
 import { defineComponent, ref, onMounted, onBeforeUnmount, watch, CSSProperties, PropType, Prop, toRefs, toRaw } from 'vue';
 import { EventEmitter, Form as FormClass, Webform } from '@formio/js';
-import structuredClone from '@ungap/structured-clone';
+import { cloneDeep as structuredClone } from 'lodash';
 import { FormConstructor, FormHandlers, FormProps, FormSource } from '../types';
 import useFormioRef from '../composables/useFormioRef';
 
