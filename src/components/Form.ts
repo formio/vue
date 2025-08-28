@@ -260,7 +260,7 @@ export const Form = defineComponent({
           // Update the form schema without recreating the instance
           formInstance.value.form = newForm;
           // Trigger a rebuild to apply schema changes
-          formInstance.value.build();
+          formInstance.value.build(formioRef.value);
         } else if (
           instanceIsReady.value &&
           formInstance.value &&
