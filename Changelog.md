@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.0.0
+### Changed
+ - Official Release
+ - FIO-10545: update @formio/js peerDependencies
+
 ## 6.0.0-rc.1
 ### Changed
  - Fix issues with module output [662090d](https://github.com/formio/vue/commit/662090d25637847d4bdb062a7907def92a1b397d)
@@ -11,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Bump @types/node@18.19.122, @vue/compiler-sfc@3.5.18, typescript@5.9.2, vite-plugin-dts@3.9.1, vite-tsconfig-paths@4.3.2, @ungap/structured-clone@1.3.0
 
 ## 5.0.0
-## Changed
+### Changed
  - Official Release
 
 ## 5.0.0-rc.3
