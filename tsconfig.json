@@ -12,7 +12,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@formio/js": ["../formio.js/lib/cjs/index.d.ts"]
     },
     "lib": ["esnext", "dom"],
     "outDir": "dist"
