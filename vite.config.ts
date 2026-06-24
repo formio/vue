@@ -5,7 +5,7 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 
 export default () => {
   return defineConfig({
-    plugins: [dts({ rollupTypes: true }), tsConfigPaths()],
+    plugins: [tsConfigPaths()],
     build: {
       sourcemap: true,
       lib: {
@@ -19,7 +19,7 @@ export default () => {
             vue: 'Vue',
           },
         },
-        external: ['vue'],
+        external: ['vue', '@formio/js'],
       },
     },
   })
