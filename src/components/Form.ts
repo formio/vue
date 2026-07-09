@@ -1,4 +1,15 @@
-import { defineComponent, ref, onMounted, onBeforeUnmount, watch, CSSProperties, PropType, Prop, toRefs, toRaw } from 'vue';
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+  watch,
+  CSSProperties,
+  PropType,
+  Prop,
+  toRefs,
+  toRaw,
+} from 'vue';
 import { EventEmitter, Form as FormClass, Webform } from '@formio/js';
 import structuredClone from '@ungap/structured-clone';
 import { FormConstructor, FormHandlers, FormProps, FormSource } from '../types';
@@ -11,10 +22,7 @@ const getDefaultEmitter = () => {
   });
 };
 
-const onAnyEvent = (
-  handlers: FormHandlers,
-  ...args: [string, ...any[]]
-) => {
+const onAnyEvent = (handlers: FormHandlers, ...args: [string, ...any[]]) => {
   const [event, ...outputArgs] = args;
   if (event.startsWith('formio.')) {
     const funcName = `on${event.charAt(7).toUpperCase()}${event.slice(8)}`;
@@ -107,7 +115,7 @@ const createWebformInstance = async (
   FormConstructor: FormConstructor | undefined,
   formSource: FormSource,
   element: HTMLDivElement,
-  options: FormProps['options'] = {}
+  options: FormProps['options'] = {},
 ) => {
   if (!options?.events) {
     options.events = getDefaultEmitter();
@@ -201,7 +209,12 @@ export const Form = defineComponent({
         console.warn('Form source not found');
         return;
       }
-      const instance = await createWebformInstance(formConstructor, formSource, formioRef.value, props.options);
+      const instance = await createWebformInstance(
+        formConstructor,
+        formSource,
+        formioRef.value,
+        props.options,
+      );
       if (instance) {
         if (typeof formSource === 'string') {
           instance.src = formSource;
@@ -254,37 +267,33 @@ export const Form = defineComponent({
     );
 
     watch(
-      () => [
-        instanceIsReady.value,
-        props.submission
-      ],
+      () => [instanceIsReady.value, props.submission],
       () => {
         if (instanceIsReady.value && formInstance.value && props.submission) {
           formInstance.value.submission = props.submission;
         }
-      }
+      },
     );
 
     watch(
-      () => [
-        instanceIsReady.value,
-        handlers,
-      ],
+      () => [instanceIsReady.value, handlers],
       (newValue, oldValue, onCleanup) => {
         if (instanceIsReady.value && formInstance.value && Object.keys(handlers).length > 0) {
           formInstance.value.onAny((...args: [string, ...any[]]) => onAnyEvent(handlers, ...args));
         }
         onCleanup(() => {
           if (instanceIsReady.value && formInstance.value && Object.keys(handlers).length > 0) {
-            formInstance.value.offAny((...args: [string, ...any[]]) => onAnyEvent(handlers, ...args));
+            formInstance.value.offAny((...args: [string, ...any[]]) =>
+              onAnyEvent(handlers, ...args),
+            );
           }
         });
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     context.expose({ formio: formInstance });
 
     return render;
-  }
+  },
 });

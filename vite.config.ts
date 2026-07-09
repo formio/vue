@@ -22,5 +22,5 @@ export default () => {
         external: ['vue', '@formio/js'],
       },
     },
-  })
+  });
 };

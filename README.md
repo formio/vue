@@ -2,8 +2,8 @@
 
 A [Vue.js](https://vuejs.org/) component for rendering out forms based on the [Form.io](https://www.form.io) platform.
 
-Official Documentation
---------------------------
+## Official Documentation
+
 For the latest documentation, release information, and guides, always refer to the official Form.io Help Documentation available here:
 
 **[https://help.form.io](https://help.form.io/dev/javascript-development/frameworks#vue)**
@@ -23,6 +23,7 @@ npm install @formio/vue --save
 ## Basic Usage
 
 HTML inside of Vue template file:
+
 ```
 <template>
   <div id="app">
@@ -32,6 +33,7 @@ HTML inside of Vue template file:
 ```
 
 Javascript inside of Vue template file.
+
 ```
 <script>
   import { Form } from '@formio/vue';
@@ -41,6 +43,7 @@ Javascript inside of Vue template file.
   }
 </script>
 ```
+
 ## Props
 
 ### `src` : `string`
@@ -54,11 +57,11 @@ You can also pass in the submission url as the `src` and the form will render wi
 
 ### `url` : `string`
 
-If you pass in the form and submission directly, some components such as resources, files and forms need to know the url of the form on the server. Pass it in with the url option. 
+If you pass in the form and submission directly, some components such as resources, files and forms need to know the url of the form on the server. Pass it in with the url option.
 
 ### `form` : `object`
 
-An object representing the form. Use this instead of src for custom forms. 
+An object representing the form. Use this instead of src for custom forms.
 
 **Note:** `src` will override this property if used.
 
@@ -81,6 +84,7 @@ Then on the form set `<formio src="myform" v-on:submit="doSomething" />`
 ## FormBuilder
 
 HTML inside of Vue template file:
+
 ```
 <template>
   <div id="app">
@@ -90,6 +94,7 @@ HTML inside of Vue template file:
 ```
 
 Javascript inside of Vue template file.
+
 ```
 <script>
   import { FormBuilder } from '@formio/vue';
@@ -103,6 +108,7 @@ Javascript inside of Vue template file.
 ## Form Actions
 
 Get access to the form instance
+
 ```
 <template>
   <div id="app">
@@ -112,12 +118,14 @@ Get access to the form instance
 ```
 
 Run a method
+
 ```
 this.$refs.formioForm.formio.submit()
 ```
 
-All methods are available here https://help.form.io/developers/form-renderer#form-methods 
+All methods are available here https://help.form.io/developers/form-renderer#form-methods
 
 ## License
+
 Released under the [MIT License](http://www.opensource.org/licenses/MIT).
 touch

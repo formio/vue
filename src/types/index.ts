@@ -45,16 +45,16 @@ export type FormProps = {
   onCancelComponent?: (component: Component) => void;
   onChange?: (value: any, flags: any, modified: boolean) => void;
   onCustomEvent?: (event: {
-      type: string;
-      component: Component;
-      data: { [key: string]: JSON };
-      event?: Event;
+    type: string;
+    component: Component;
+    data: { [key: string]: JSON };
+    event?: Event;
   }) => void;
   onComponentChange?: (changed: {
-      instance: Webform;
-      component: Component;
-      value: any;
-      flags: any;
+    instance: Webform;
+    component: Component;
+    value: any;
+    flags: any;
   }) => void;
   onSubmit?: (submission: Submission, saved?: boolean) => void;
   onSubmitDone?: (submission: Submission) => void;
@@ -97,21 +97,21 @@ export type FormBuilderProps = {
   onBuilderReady?: (builder: FormioFormBuilder) => void;
   onChange?: (form: FormType) => void;
   onSaveComponent?: (
-      component: Component,
-      original: Component,
-      parent: Component,
-      path: string,
-      index: number,
-      isNew: boolean,
-      originalComponentSchema: Component,
+    component: Component,
+    original: Component,
+    parent: Component,
+    path: string,
+    index: number,
+    isNew: boolean,
+    originalComponentSchema: Component,
   ) => void;
   onEditComponent?: (component: Component) => void;
   onUpdateComponent?: (component: Component) => void;
   onDeleteComponent?: (
-      component: Component,
-      parent: Component,
-      path: string,
-      index: number,
+    component: Component,
+    parent: Component,
+    path: string,
+    index: number,
   ) => void;
 };
 
