@@ -1,4 +1,4 @@
-import { vi, beforeEach, afterEach } from 'vitest'
+import { vi, beforeEach, afterEach } from 'vitest';
 /**
  * Test-only mock for @ungap/structured-clone.
  *
@@ -9,17 +9,17 @@ import { vi, beforeEach, afterEach } from 'vitest'
  *
  */
 vi.mock('@ungap/structured-clone', () => ({
-  default: vi.fn((obj) => JSON.parse(JSON.stringify(obj)))
-}))
+  default: vi.fn((obj) => JSON.parse(JSON.stringify(obj))),
+}));
 
 // Global error handler to suppress Vue warnings in tests
-const originalConsoleWarn = console.warn
+const originalConsoleWarn = console.warn;
 
 beforeEach(() => {
-  console.warn = vi.fn()
-})
+  console.warn = vi.fn();
+});
 
 afterEach(() => {
-  console.warn = originalConsoleWarn
-  vi.clearAllMocks()
-})
+  console.warn = originalConsoleWarn;
+  vi.clearAllMocks();
+});

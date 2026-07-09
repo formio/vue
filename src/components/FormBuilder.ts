@@ -11,13 +11,8 @@ const toggleEventHandlers = (
   shouldAttach: boolean = true,
 ) => {
   const fn = shouldAttach ? 'on' : 'off';
-  const {
-    onSaveComponent,
-    onEditComponent,
-    onUpdateComponent,
-    onDeleteComponent,
-    onChange,
-  } = handlers;
+  const { onSaveComponent, onEditComponent, onUpdateComponent, onDeleteComponent, onChange } =
+    handlers;
   builder.instance[fn](
     'saveComponent',
     (
@@ -29,15 +24,7 @@ const toggleEventHandlers = (
       isNew: boolean,
       originalComponentSchema: Component,
     ) => {
-      onSaveComponent?.(
-        component,
-        original,
-        parent,
-        path,
-        index,
-        isNew,
-        originalComponentSchema,
-      );
+      onSaveComponent?.(component, original, parent, path, index, isNew, originalComponentSchema);
       onChange?.(structuredClone(toRaw(builder.instance.form)));
     },
   );
@@ -47,12 +34,7 @@ const toggleEventHandlers = (
   });
   builder.instance[fn](
     'removeComponent',
-    (
-      component: Component,
-      parent: Component,
-      path: string,
-      index: number,
-    ) => {
+    (component: Component, parent: Component, path: string, index: number) => {
       onDeleteComponent?.(component, parent, path, index);
       onChange?.(structuredClone(toRaw(builder.instance.form)));
     },
@@ -115,9 +97,7 @@ export const FormBuilder = defineComponent({
 
     const createInstance = async () => {
       if (!formioRef.value) {
-        console.warn(
-          'FormBuilder render element not found, cannot render builder.',
-        );
+        console.warn('FormBuilder render element not found, cannot render builder.');
         return;
       }
       const instance = await createBuilderInstance(
@@ -141,14 +121,10 @@ export const FormBuilder = defineComponent({
       if (builder.value) {
         builder.value.instance.destroy(true);
       }
-    }
+    };
 
     watch(
-      () => [
-        props.initialForm,
-        props.options,
-        props.onBuilderReady,
-      ],
+      () => [props.initialForm, props.options, props.onBuilderReady],
       () => {
         if (instanceIsReady.value) {
           cleanupInstance();
@@ -166,11 +142,7 @@ export const FormBuilder = defineComponent({
     });
 
     watch(
-      () => [
-        props.initialForm,
-        props.options,
-        props.onBuilderReady,
-      ],
+      () => [props.initialForm, props.options, props.onBuilderReady],
       () => {
         if (instanceIsReady.value) {
           cleanupInstance();
