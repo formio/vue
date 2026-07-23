@@ -1,6 +1,6 @@
 {
   "name": "@formio/vue",
-  "version": "6.2.2",
+  "version": "6.2.3",
   "description": "A vue.js renderer for form.io forms.",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
@@ -28,12 +28,12 @@
   "homepage": "https://github.com/formio/vue-formio#readme",
   "peerDependencies": {
     "@formio/core": "^2.7.1",
-    "@formio/js": "^5.4.2",
+    "@formio/js": "^5.4.3",
     "vue": "^3.4.15"
   },
   "devDependencies": {
     "@formio/core": "^2.7.1",
-    "@formio/js": "^5.4.2",
+    "@formio/js": "^5.4.3",
     "@types/node": "^18.17.5",
     "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.1.0",
