@@ -1,5 +1,40 @@
 # @formio/vue
 
+## 6.3.0
+
+### Minor Changes
+
+- a03805a: force minor bump on remaining packages that didn't bump with initial build
+
+### Patch Changes
+
+- Updated dependencies [801970f]
+- Updated dependencies [8a329d9]
+- Updated dependencies [a03805a]
+  - @formio/core@2.8.0
+  - @formio/js@5.5.0
+
+## 6.3.0-api99.1
+
+### Minor Changes
+
+- a03805a: force minor bump on remaining packages that didn't bump with initial build
+
+### Patch Changes
+
+- Updated dependencies [8a329d9]
+- Updated dependencies [a03805a]
+  - @formio/core@2.8.0-api99.1
+  - @formio/js@5.5.0-api99.1
+
+## 6.2.4-api99.0
+
+### Patch Changes
+
+- Updated dependencies [801970f]
+  - @formio/core@2.8.0-api99.0
+  - @formio/js@5.4.4-api99.0
+
 ## 6.2.3
 
 ### Patch Changes
