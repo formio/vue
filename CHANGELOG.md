@@ -1,5 +1,23 @@
 # @formio/vue
 
+## 6.3.4
+
+### Patch Changes
+
+- Updated dependencies [6d5f18f]
+- Updated dependencies [c2b3cc2]
+  - @formio/core@2.9.0
+  - @formio/js@5.6.1
+
+## 6.3.4-api911.0
+
+### Patch Changes
+
+- Updated dependencies [6d5f18f]
+- Updated dependencies [c2b3cc2]
+  - @formio/core@2.9.0-api911.0
+  - @formio/js@5.6.1-api911.0
+
 ## 6.3.3
 
 ### Patch Changes
