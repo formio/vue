@@ -1,5 +1,73 @@
 # @formio/vue
 
+## 6.3.5
+
+### Patch Changes
+
+- Updated dependencies [118421a]
+- Updated dependencies [72662e9]
+- Updated dependencies [9579878]
+- Updated dependencies [01994a0]
+- Updated dependencies [760cf16]
+- Updated dependencies [2eefe56]
+- Updated dependencies [ccdf6bc]
+- Updated dependencies [a6e7751]
+- Updated dependencies [797da5d]
+- Updated dependencies [598aa95]
+- Updated dependencies [424eda2]
+- Updated dependencies [e673507]
+- Updated dependencies [8f24eeb]
+  - @formio/js@5.7.0
+
+## 6.3.5-api912.2
+
+### Patch Changes
+
+- Updated dependencies [72662e9]
+- Updated dependencies [a6e7751]
+  - @formio/js@5.7.0-api912.2
+
+## 6.3.5-api912.1
+
+### Patch Changes
+
+- Updated dependencies [9579878]
+  - @formio/js@5.7.0-api912.1
+
+## 6.3.5-api912.0
+
+### Patch Changes
+
+- Updated dependencies [118421a]
+- Updated dependencies [01994a0]
+- Updated dependencies [760cf16]
+- Updated dependencies [2eefe56]
+- Updated dependencies [ccdf6bc]
+- Updated dependencies [797da5d]
+- Updated dependencies [598aa95]
+- Updated dependencies [424eda2]
+- Updated dependencies [e673507]
+- Updated dependencies [8f24eeb]
+  - @formio/js@5.7.0-api912.0
+
+## 6.3.4
+
+### Patch Changes
+
+- Updated dependencies [6d5f18f]
+- Updated dependencies [c2b3cc2]
+  - @formio/core@2.9.0
+  - @formio/js@5.6.1
+
+## 6.3.4-api911.0
+
+### Patch Changes
+
+- Updated dependencies [6d5f18f]
+- Updated dependencies [c2b3cc2]
+  - @formio/core@2.9.0-api911.0
+  - @formio/js@5.6.1-api911.0
+
 ## 6.3.3
 
 ### Patch Changes
